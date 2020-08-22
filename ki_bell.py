@@ -12,9 +12,9 @@ def read_sensor():
         swieci = 300 # zaślepka testowa
         print("wartość swieci ", swieci)
         if swieci > 250:
-            czy_swieci = ["http://dh.vj.pl/img/zajete.jpg", "zajęte", "red", "lightcoral", "f00"]
+            czy_swieci = ["https://raw.githubusercontent.com/bibliotekarz/ki-bell/master/img/zajete.jpg", "zajęte", "red", "lightcoral", "f00"]
         else:
-            czy_swieci = ["http://dh.vj.pl/img/wolne.jpg", "wolne", "green", "lightgreen", "0f0"]
+            czy_swieci = ["https://raw.githubusercontent.com/bibliotekarz/ki-bell/master/img/wolne.jpg", "wolne", "green", "lightgreen", "0f0"]
         
     except OSError as e:
         return('Failed to read sensor.')
