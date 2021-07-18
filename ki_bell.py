@@ -5,7 +5,7 @@ import time
 # import machine
 
 
-def read_sensor():
+def read_sensor()->list:
     try:
         #        pr = machine.ADC(0)
         #        swieci = pr.read()
@@ -24,7 +24,7 @@ def read_sensor():
     return data
 
 
-def web_page(czy_swieci):
+def web_page(czy_swieci:list)->str:
     html = f"""<!DOCTYPE html>
 <html>
 <head>
