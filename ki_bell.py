@@ -5,7 +5,7 @@ import time
 # import machine
 
 
-def read_sensor()->list:
+def read_sensor() -> list:
     try:
         #        pr = machine.ADC(0)
         #        swieci = pr.read()
@@ -24,20 +24,21 @@ def read_sensor()->list:
     return data
 
 
-def web_page(czy_swieci:list)->str:
-    html = f"""<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="refresh" content="5">
-    <meta charset="UTF-8">
-    <title>Projekt Ki-Bell</title>
-    <link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 46 45' xmlns='http://www.w3.org/2000/svg'><title>Status</title><path d='M.708 45L23 .416 45.292 45H.708zM35 38L23 19 11 38h24z'  fill='#{czy_swieci[4]}'/></svg>" type="image/x-icon"/ > </head> <body> <div style='text-transform: uppercase; text-align: center; color: {czy_swieci[2]}; border: double; background-color: {czy_swieci[3]};'> 
-    <h1>WC jest {czy_swieci[1]}.</h1>
-    <img src='{czy_swieci[0]}' alt='stan ubikacji - {czy_swieci[1]}'>
-    <br /><br />
-    </div>
-</body>
-</html>"""
+def web_page(czy_swieci: list) -> str:
+    html = """<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="refresh" content="5">
+        <meta charset="UTF-8">
+        <title>Projekt Ki-Bell</title>
+        <link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 46 45' xmlns='http://www.w3.org/2000/svg'><title>Status</title><path d='M.708 45L23 .416 45.292 45H.708zM35 38L23 19 11 38h24z'  fill='#""" + czy_swieci[4] + """'/></svg>" type="image/x-icon"/ > </head> <body> <div style='text-transform: uppercase; text-align: center; color: """ + czy_swieci[2] + """; border: double; background-color: """ + czy_swieci[3] + """;'> 
+        <h1>WC jest """ + czy_swieci[1] + """.</h1>
+        <img src='""" + czy_swieci[0] + """' alt='stan ubikacji - """ + czy_swieci[1] + """'>
+        <br /><br />
+        </div>
+    </body>
+    </html>"""
+
     return html
 
 
