@@ -1,17 +1,15 @@
 import socket
-
-
-# import machine
+import machine
 
 
 def read_sensor() -> list:
     try:
-        #        pr = machine.ADC(0)
-        #        swieci = pr.read()
+        pr = machine.ADC(0)
+        swieci = pr.read()
 
         data = ["https://raw.githubusercontent.com/bibliotekarz/ki-bell/master/img/wolne.jpg", "wolne", "green",
                 "lightgreen", "0f0"]
-        swieci = 300  # zaślepka testowa
+
         print("wartość swieci ", swieci)
         if swieci > 250:
             data = ["https://raw.githubusercontent.com/bibliotekarz/ki-bell/master/img/zajete.jpg", "zajęte",
@@ -49,7 +47,7 @@ addr = socket.getaddrinfo('0.0.0.0', 80)[0][-1]
 
 s = socket.socket()
 s.bind(addr)
-s.listen(1)
+s.listen(4)
 
 while True:
     cl, addr = s.accept()

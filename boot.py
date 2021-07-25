@@ -2,6 +2,9 @@ import gc
 import time
 import network
 import webrepl
+import esp
+
+esp.osdebug(None)
 
 network.WLAN(network.AP_IF).active(False)
 sta_if = network.WLAN(network.STA_IF)
